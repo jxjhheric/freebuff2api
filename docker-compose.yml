@@ -2,7 +2,19 @@ services:
   freebuff2api:
     build: .
     ports:
-      - "8000:8000"
+      - "${FREEBUFF_PORT:-8000}:${FREEBUFF_PORT:-8000}"
+    environment:
+      FREEBUFF_TOKEN: "${FREEBUFF_TOKEN:-你的 Freebuff Bearer token}"
+      FREEBUFF_API_KEY: "${FREEBUFF_API_KEY:-本地 OpenAI API key，可留空}"
+      FREEBUFF_AD_PROVIDERS: "${FREEBUFF_AD_PROVIDERS:-gravity,zeroclick}"
+      FREEBUFF_PROXY_ENABLED: "${FREEBUFF_PROXY_ENABLED:-false}"
+      FREEBUFF_PROXY_URL: "${FREEBUFF_PROXY_URL:-}"
+      FREEBUFF_DEBUG: "${FREEBUFF_DEBUG:-false}"
+      FREEBUFF_LOG_LEVEL: "${FREEBUFF_LOG_LEVEL:-INFO}"
+      FREEBUFF_LOG_BODY_CHARS: "${FREEBUFF_LOG_BODY_CHARS:-2000}"
+      FREEBUFF_LOG_COLOR: "${FREEBUFF_LOG_COLOR:-true}"
+      FREEBUFF_HOST: "${FREEBUFF_HOST:-0.0.0.0}"
+      FREEBUFF_PORT: "${FREEBUFF_PORT:-8000}"
     env_file:
       - .env
     volumes:
