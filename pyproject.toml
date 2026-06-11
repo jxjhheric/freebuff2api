@@ -2,7 +2,7 @@
 name = "freebuff2api"
 version = "0.1.0"
 description = "OpenAI-compatible API adapter for Codebuff Freebuff"
-readme = "README.md"
+readme = ""
 requires-python = ">=3.13"
 dependencies = [
     "fastapi>=0.115.0",
