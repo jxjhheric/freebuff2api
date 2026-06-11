@@ -4,8 +4,8 @@ services:
     ports:
       - "${FREEBUFF_PORT:-8000}:${FREEBUFF_PORT:-8000}"
     environment:
-      FREEBUFF_TOKEN: "${FREEBUFF_TOKEN:-你的 Freebuff Bearer token}"
-      FREEBUFF_API_KEY: "${FREEBUFF_API_KEY:-本地 OpenAI API key，可留空}"
+      FREEBUFF_TOKEN: "${FREEBUFF_TOKEN:-}"
+      FREEBUFF_API_KEY: "${FREEBUFF_API_KEY:-}"
       FREEBUFF_AD_PROVIDERS: "${FREEBUFF_AD_PROVIDERS:-gravity,zeroclick}"
       FREEBUFF_PROXY_ENABLED: "${FREEBUFF_PROXY_ENABLED:-false}"
       FREEBUFF_PROXY_URL: "${FREEBUFF_PROXY_URL:-}"
