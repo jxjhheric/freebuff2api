@@ -7,7 +7,7 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 WORKDIR /app
 
 # Copy dependency files
-COPY pyproject.toml uv.lock ./
+COPY pyproject.toml uv.lock README.md ./
 
 # Install dependencies
 RUN uv sync --no-dev --frozen
@@ -29,8 +29,8 @@ COPY . .
 # Set environment variables
 ENV PATH="/app/.venv/bin:$PATH"
 ENV PYTHONUNBUFFERED=1
-ENV FREEBUFF_TOKEN="你的 Freebuff Bearer token"
-ENV FREEBUFF_API_KEY="本地 OpenAI API key，可留空"
+ENV FREEBUFF_TOKEN=""
+ENV FREEBUFF_API_KEY=""
 ENV FREEBUFF_AD_PROVIDERS="gravity,zeroclick"
 ENV FREEBUFF_PROXY_ENABLED="false"
 ENV FREEBUFF_PROXY_URL=""
